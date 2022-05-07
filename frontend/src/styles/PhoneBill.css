@@ -1,0 +1,54 @@
+.billCard{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 5px 1px grey;
+}
+
+form {
+    display: table;
+}
+
+form div {
+    display: table-row;
+}
+form div label {
+    display: table-cell;
+    padding-right: 2rem;
+}
+form div input {
+    display: table-cell;
+    margin-bottom: 20px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    border-width: 1.2px;
+    border-color: rgb(78, 78, 213);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+
+button.billbutton {
+    background-color: rgb(34, 34, 196);
+    color: white;
+    padding: 8px 10px;
+    display: table-cell;
+    margin: 20px 0px 10px 0px;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #404040;
+    width: 100%;
+    cursor: pointer;
+}
+
+.formTitle{
+    margin-bottom: 2rem;
+}
