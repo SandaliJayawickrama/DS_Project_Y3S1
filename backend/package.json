@@ -1,0 +1,27 @@
+{
+  "name": "af_project_y3s1",
+  "version": "1.0.0",
+  "description": "MERN Stack web application - Research project management tool",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "server":"nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandaliJayawickrama/AF_Project_Y3S1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SandaliJayawickrama/AF_Project_Y3S1/issues"
+  },
+  "homepage": "https://github.com/SandaliJayawickrama/AF_Project_Y3S1#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.1",
+    "nodemon": "^2.0.16"
+  }
+}
