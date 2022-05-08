@@ -8,7 +8,8 @@ import Home from './components/Home';
 import { ItemDisplay } from './components/ItemDisplay';
 import Delivery from './components/Delivery';
 import MobilePayMain from './components/MobilePay/MobilePayMain';
-
+import AddItems_Farmers from './components/AddItems_Farmers';
+import HomeFarmer from './components/HomeFarmer';
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
           <Route exact path="/delivery" element={<Delivery />} />
           <Route path="/bill" element={<MobilePayMain />} />
 
+          <Route exact path="/FarmerHome" element={<HomeFarmer/>} />
+          <Route exact path="/addItems" element={<AddItems_Farmers/>} />
         </Routes>
     </>
   );
