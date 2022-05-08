@@ -1,0 +1,37 @@
+.d2 {
+    margin-top: 10%;
+    width: 20%;
+    height: 20%;
+    margin-right: -70%;
+    align-items: center;
+}
+
+.d3 {
+    margin-top: 4%;
+    margin-left: -70%;
+    width: 35%;
+    height: 35%;
+    align-items: center;
+}
+
+.card-title1{
+    margin-top: 0%;
+    margin-left: 70%;
+}
+
+.card-title2 {
+    margin-top: -4%;
+    margin-left: -70%;
+}
+
+.detail2 {
+    margin-left: 72%;
+}
+
+.detail3 {
+    margin-left: -69%;
+}
+
+.searchf {
+    margin-left:54%;
+}
