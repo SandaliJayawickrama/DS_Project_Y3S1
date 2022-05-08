@@ -54,6 +54,23 @@ router.delete('/deleteMpay', async(req,res) => {
     }
 })
 
+//Update payment Details =========================================================
+router.put('/update/:id', async (req, res) => {
+    const{id} = req.params;
+    const {phone, amount, pin} = req.body;
+    let data = {
+        "phone" : phone,
+        "amount" : amount,
+        "pin" : pin,
+    };
+    try{
+        const pay = await MobilePay.findByIdAndUpdate(id, data);
+        res.json({Message: "Payment Updated Successfully..."});
+    } catch (error) {
+        res.status(500).send("Payment Not Updated")
+    }
+})
+
 
 //=================================================================================
   module.exports = router;
