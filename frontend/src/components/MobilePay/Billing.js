@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../styles/PhoneBill.css';
+import '../../styles/PhoneBill.css';
 
 class Billing extends Component {
 
@@ -9,7 +9,6 @@ class Billing extends Component {
         this.state = {
            mobile : null,
            amount: null,
-           pin: null,
         }
     }
 
@@ -32,14 +31,14 @@ class Billing extends Component {
     }
 
     handleSubmit = (event) => {
-        alert(`${this.state.mobile} ${this.state.pin} ${this.state.amount}`)
+        alert(`Mobile No : ${this.state.mobile} & Amount : ${this.state.amount}`)
         event.preventDefault()
     }
 
     render() {    
         return (
             <div>
-                <form  className='billCard' onSubmit={this.handleSubmit}>
+                <form  className='billCard mpay-col-2' onSubmit={this.handleSubmit}>
                     <h2 className='formTitle'>Mobile Pay</h2>
                     <div>
                         <label className='label'>Enter Mobile Number</label>
@@ -49,13 +48,13 @@ class Billing extends Component {
                         <label>Charging Amount</label>
                         <input type='text' id='amount' name='amount' value={this.state.amount} required placeholder='enter amount' onChange={this.handleAmount} size='30' />
                     </div>
-                    <div>
+                    {/* <div>
                         <label>Pin Number</label>
                         <input type='text' id='pin' name='pin' value={this.state.pin} required placeholder='enter pin number' size='30' onChange={this.handlePin} minLength='6' maxLength='6' />
-                    </div>
+                    </div> */}
                     <div>
                         <label />
-                        <button className='billbutton' type='submit'>Pay Bill</button>
+                        <button className='billbutton next' type='submit'>Get OTP</button>
                     </div>
                 </form>
             </div>

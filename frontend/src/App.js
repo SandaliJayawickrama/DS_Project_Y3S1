@@ -2,7 +2,7 @@ import './styles/Navbar.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { Home } from './components/Home';
-import Billing from './components/Billing';
+import MobilePayMain from './components/MobilePay/MobilePayMain';
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Navbar/>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/bill" element={<Billing />} />
+          <Route path="/bill" element={<MobilePayMain />} />
         </Routes>
     </>
   );
