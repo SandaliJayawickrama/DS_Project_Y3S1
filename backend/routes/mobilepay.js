@@ -42,6 +42,18 @@ router.get('/get', async (req,res) => {
     }
 })
 
+//Delete payment =================================================================
+router.delete('/deleteMpay', async(req,res) => {
+    const{id} = req.body;
+    try{
+        const pay = await MobilePay.findById(id);
+        await pay.remove();
+        res.json({Message: "Payment deleted", Result: pay});
+    } catch (error) {
+        res.status(500).send("Cannot delete Payment Details");
+    }
+})
+
 
 //=================================================================================
   module.exports = router;
