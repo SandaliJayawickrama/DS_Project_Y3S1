@@ -3,7 +3,7 @@ const MobilePay = require("../models/MobilePay");
 
 const router = express.Router();
 
-//add mobile payment details to the database=======================================================
+//add mobile payment details to the database========================================
 router.post('/', async (req, res) => {
     const {phone, amount, pin} = req.body;
     let pay = {
@@ -20,6 +20,16 @@ router.post('/', async (req, res) => {
     }
 })
 
+
+//Get all mobile payments==========================================================
+router.get('/getAll', async (req,res) => {
+    try{
+        const data = await MobilePay.find();
+        res.json({Message : "All results fetched", Result: data})
+    } catch (errror) {
+        res.status(500).send("Cannot fetch all data");
+    }
+})
 
 
 //=================================================================================
