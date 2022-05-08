@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import Home from './components/Home';
 import { ItemDisplay } from './components/ItemDisplay';
 import Delivery from './components/Delivery';
+import MobilePayMain from './components/MobilePay/MobilePayMain';
+
 
 
 function App() {
@@ -15,8 +17,11 @@ function App() {
       <Navbar/>
         <Routes>
           <Route exact path="/" element={<Home />} />
+
           <Route exact path="/cart" element={<ItemDisplay />} />
           <Route exact path="/delivery" element={<Delivery />} />
+          <Route path="/bill" element={<MobilePayMain />} />
+
         </Routes>
     </>
   );
