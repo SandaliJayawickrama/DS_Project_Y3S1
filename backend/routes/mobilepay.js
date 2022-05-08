@@ -1,32 +1,27 @@
 const express = require("express");
-const MobilePay = require("../models/MobilePay.js");
+const MobilePay = require("../models/MobilePay");
 
 const router = express.Router();
 
+//add mobile payment details to the database=======================================================
 router.post('/', async (req, res) => {
     const {phone, amount, pin} = req.body;
+    let pay = {
+        "phone" : phone,
+        "amount" : amount,
+        "pin" : pin,
+    };
     try{
-        const newMPay = await MobilePay.create({phone, amount, pin});
-        res.json({Message: 'Value inserted', Result: newMPay})
-    }catch (error){
-        res.status(500).send("Payment Haven't added");
+        let newpayModel = new MobilePay(pay);
+        await newpayModel.save();
+        res.json({Message: 'Value inserted', Result: newpayModel});
+    }catch (error) {
+        res.status(500).send("Mobile payment not added");
     }
 })
 
 
-// router.post("/", (req, res) => {
-//     const mpay = new MobilePay({
-//       mobile: req.body.mobile,
-//       amount: req.body.amount,
-//       pin: req.body.pin,
-//     });
-//     mpay.save().then(result => {
-//       res.status(201).json({
-//         message: "Schedule added successfully",
-//         Result : result
-//       });
-//     });
-//   });
 
-
+//=================================================================================
   module.exports = router;
+//================================================================================

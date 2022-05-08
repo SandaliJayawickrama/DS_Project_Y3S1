@@ -15,8 +15,13 @@ app.use(express.json());
 const port = process.env.PORT || 3100;
 const uri = process.env.MONGO_URI;
 
+app.use(express.json({extended: false}));
+app.use(express.urlencoded({ extended: false }));
+
 app.use("/api/doctors" , DoctorRoutes);
-app.use("/api/mobilepay" , MobilePay);
+
+//For mobile payment===========
+app.use('/api/mobilepay' , MobilePay);
 
 //DB Connection
 mongoose.connect(uri, {useNewUrlParser:true, useUnifiedTopology:true});
