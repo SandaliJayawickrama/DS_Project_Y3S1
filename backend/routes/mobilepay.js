@@ -31,6 +31,17 @@ router.get('/getAll', async (req,res) => {
     }
 })
 
+//Get a payment ===================================================================
+router.get('/get', async (req,res) => {
+    const{id} = req.body;
+    try{
+        const pay = await MobilePay.findById(id);
+        res.json({Message: "Payment recieved", Result: pay});
+    } catch (error) {
+        res.status(500).send("Cannot get the Payment");
+    }
+})
+
 
 //=================================================================================
   module.exports = router;
