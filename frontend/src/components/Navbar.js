@@ -19,13 +19,18 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="/about">
                     About
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     Contact us
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/FarmerHome">
+                    Farmer
                   </a>
                 </li>
                 <li class="nav-item"> 
@@ -41,7 +46,7 @@ const Navbar = () => {
 
       <div className="footer1">
         <center>
-          Sandali &nbsp;&nbsp; Nayanee &nbsp;&nbsp; Manee &nbsp;&nbsp; Sandali &nbsp;&nbsp;
+          Chethana &nbsp;&nbsp; Nayanee &nbsp;&nbsp; Manee &nbsp;&nbsp; Sandali &nbsp;&nbsp;
         </center>
       </div>
     

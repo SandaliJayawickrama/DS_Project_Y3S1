@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const DoctorRoutes = require("./routes/doctors");
+const ItemRoutes = require("./routes/itemRoute");
 
 require('dotenv').config();
 
@@ -15,6 +16,7 @@ const port = process.env.PORT || 3100;
 const uri = process.env.MONGO_URI;
 
 app.use("/api/doctors" , DoctorRoutes);
+app.use("/itemadd" , ItemRoutes);
 
 //DB Connection
 mongoose.connect(uri, {useNewUrlParser:true, useUnifiedTopology:true});
@@ -25,3 +27,4 @@ mongoose.connection.once("open", () => {
 app.listen(port, () =>{
     console.log("Server is starting on port " + port);
 });
+
