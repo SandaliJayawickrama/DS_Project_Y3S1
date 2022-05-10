@@ -10,4 +10,3 @@ const itemsList = mongoose.Schema({
 
 
 module.exports =  mongoose.model('Items', itemsList );
-

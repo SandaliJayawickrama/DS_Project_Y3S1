@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
 
-export default function AddItems_Farmers() {
+export default function Farmers_AddItems() {
 
     const [itemType,setType] = useState("");
     const [itemName,setiName] = useState("");
@@ -24,7 +24,7 @@ export default function AddItems_Farmers() {
 
     return(
         <div>
-            <div className='container'>
+            <div className='container addForm'>
             <form onSubmit={sendData} action="/post" method="post" enctype="multipart/form-data">
 
                 <div className="form-group">
@@ -37,7 +37,7 @@ export default function AddItems_Farmers() {
                         <option>Fruits</option>
                     </select>
                 </div>
-
+                <br/>
                 <div className="form-group">
                     <label for="ItemName">Item Name</label>
                     <input type="text" className="form-control" id="ItemName" aria-describedby="emailHelp" placeholder="Enter Item Name"
