@@ -40,7 +40,6 @@ const router = express.Router();
 
 
 
-
 router.post("/add", (req, res, next) => {
   const itemModel = new Item({
     itemType: req.body.itemType,
@@ -70,18 +69,16 @@ router.put("/:id", (req, res, next) => {
   });
 });
 
+router.get("/getdata", async(req,res) => {
+  try {
+      const allItems = await Item.find({});
+      res.status(200).json(allItems);
+  } catch (err) {
+      res.json(err);
+  }
+})
 
-
-router.get("", (req, res, next) => {
-    Item.find().then(documents => {
-    res.status(200).json({
-      message: "Items fetched successfully!",
-      items: documents
-    });
-  });
-});
-
-
+//get for the update
 router.get("/:id", (req, res, next) => {
     Item.findById(req.params.id).then(itemModel => {
     if (itemModel) {
