@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { AppBar} from '@mui/material';
 
 const Navbar = () => {
   return (
@@ -29,7 +30,12 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li class="nav-item"> 
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="/login">
+                    Login
+                  </a>
+                </li>
+                <li class="nav-item"> 
+                  <a class="nav-link" href="/signup">
                     Sign In
                   </a>
                 </li>
