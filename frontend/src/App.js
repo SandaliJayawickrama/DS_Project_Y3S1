@@ -10,7 +10,6 @@ import Delivery from './components/Delivery';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Welcome from './components/Welcome';
-import MobilePayMain from './components/MobilePay/MobilePayMain';
 
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/welcome" element={<Welcome />} />
-          <Route exact path="/bill" element={<MobilePayMain />} />
         </Routes>
     </>
   );

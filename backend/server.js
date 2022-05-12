@@ -4,10 +4,9 @@ const dotenv = require('dotenv').config();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+
 const BuyerRoute = require('./routes/Buyers');
 const UserRoute = require('./routes/Users');
-const MobilePay = require("./routes/mobilepay");
-
 
 const app = express();
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
@@ -20,9 +19,6 @@ const uri = process.env.MONGO_URI;
 
 app.use(express.json({extended: false}));
 app.use(express.urlencoded({ extended: false }));
-
-//For mobile payment===========
-app.use('/api/mobilepay' , MobilePay);
 
 //DB Connection
 mongoose.connect(uri, {useNewUrlParser:true, useUnifiedTopology:true});
