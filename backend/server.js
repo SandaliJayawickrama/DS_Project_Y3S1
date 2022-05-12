@@ -12,7 +12,7 @@ const BuyerRoute = require('./routes/Buyers');
 const UserRoute = require('./routes/Users');
 
 const app = express();
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({credentials: true, origin: "http://localhost:3000" }));
 app.use(express.json());
 app.use(cookieParser());
 
