@@ -39,6 +39,11 @@ const Navbar = () => {
                     Sign In
                   </a>
                 </li>
+                <li class="nav-item"> 
+                  <a class="nav-link" href="/bill">
+                    Bill - Phone
+                  </a>
+                </li>
               </ul>
             </div>
           </nav>
