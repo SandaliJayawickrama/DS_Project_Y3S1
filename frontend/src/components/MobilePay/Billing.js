@@ -7,8 +7,8 @@ class Billing extends Component {
         super(props)
           
         this.state = {
-           mobile : null,
-           amount: null,
+           mobile : " ",
+           amount: " ",
         }
     }
 
@@ -35,10 +35,37 @@ class Billing extends Component {
         event.preventDefault()
     }
 
+    postData = async (e) => {
+        e.preventDefault();
+        const {mobile, amount} = this.state;
+
+        const res = await fetch("http://localhost:3100/api/mobilepay/", {
+            method: "post",
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                phone : mobile,
+                amount : amount,
+                pin : amount,
+            })
+        })
+
+        const data = await res.json();
+        if(res.status === 404 || !data){
+            window.alert("Data Not added");
+            console.log("Data Not added");
+        }else{
+            window.alert("Data added");
+            console.log("Data added");
+        }
+    }
+
     render() {    
         return (
             <div>
-                <form  className='billCard mpay-col-2' onSubmit={this.handleSubmit}>
+                <form method='POST' className='billCard mpay-col-2' onSubmit={this.postData}>
                     <h2 className='formTitle'>Mobile Pay</h2>
                     <div>
                         <label className='label'>Enter Mobile Number</label>
@@ -54,7 +81,7 @@ class Billing extends Component {
                     </div> */}
                     <div>
                         <label />
-                        <button className='billbutton next' type='submit'>Get OTP</button>
+                        <button className='billbutton next' type='submit' >Get OTP</button>
                     </div>
                 </form>
             </div>

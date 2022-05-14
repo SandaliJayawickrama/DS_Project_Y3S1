@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 
 var MPay = new mongoose.Schema(
     {
-    phone: {type: String, required:true, default:'phone', trim: true},
-    amount: {type: String, required:true, default:'amount', trim: true},
-    pin: {type: String, required:true, default:'pin', trim: true},
+    phone: {type: String, required:true, default: 'default No', trim: true},
+    amount: {type: String, required:true, default:'default 1200', trim: true},
+    pin: {type: String, required:true, default:'default 123456', trim: true},
     }
 )
 

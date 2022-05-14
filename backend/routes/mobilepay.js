@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
         await newpayModel.save();
         res.json({Message: 'Value inserted', Result: newpayModel});
     }catch (error) {
-        res.status(500).send("Mobile payment not added");
+        res.status(404).send("Mobile payment not added");
     }
 })
 
