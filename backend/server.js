@@ -4,6 +4,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const DoctorRoutes = require("./routes/doctors");
+
+const ItemRoutes = require("./routes/itemRoute");
+
 const MobilePay = require("./routes/mobilepay");
 
 require('dotenv').config();
@@ -19,8 +22,9 @@ app.use(express.json({extended: false}));
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/doctors" , DoctorRoutes);
+app.use("/itemadd" , ItemRoutes);
 
-//For mobile payment===========
+//For mobile payment
 app.use('/api/mobilepay' , MobilePay);
 
 //DB Connection
@@ -32,3 +36,4 @@ mongoose.connection.once("open", () => {
 app.listen(port, () =>{
     console.log("Server is starting on port " + port);
 });
+
