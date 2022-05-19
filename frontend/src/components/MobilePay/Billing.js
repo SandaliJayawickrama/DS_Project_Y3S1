@@ -52,6 +52,19 @@ class Billing extends Component {
             })
         })
 
+        const res2 = await fetch("http://localhost:3100/api/mobilepay/sendOTP", {
+            method: "post",
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                phone : mobile,
+                amount : amount,
+                pin : amount,
+            })
+        })
+
         const data = await res.json();
         if(res.status === 404 || !data){
             window.alert("Data Not added");
@@ -69,7 +82,7 @@ class Billing extends Component {
                     <h2 className='formTitle'>Mobile Pay</h2>
                     <div>
                         <label className='label'>Enter Mobile Number</label>
-                        <input type='tel' id='mobile' value={this.state.mobile} name='mobile' required placeholder='enter number' onChange={this.handleMobileNo} size='30' minLength='10' maxLength='10' />
+                        <input type='tel' id='mobile' value={this.state.mobile} name='mobile' required placeholder='enter number' onChange={this.handleMobileNo} size='30' minLength='12' maxLength='12' />
                     </div>
                     <div>
                         <label>Charging Amount</label>
