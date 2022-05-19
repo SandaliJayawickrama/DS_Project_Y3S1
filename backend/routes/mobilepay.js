@@ -5,8 +5,8 @@ const crypto = require ("crypto");
 
 //init nexmo
 const nexmo = new Nexmo({
-    apiKey: '8222b19a',
-    apiSecret: 'dTldoivz0xSaoL0U'
+    apiKey: '--NEXMO KEY---',
+    apiSecret: '--NEXMO SECRET--'
 }, {debug: true});
 
 const router = express.Router();
