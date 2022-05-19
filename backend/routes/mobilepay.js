@@ -1,5 +1,13 @@
 const express = require("express");
 const MobilePay = require("../models/MobilePay");
+const Nexmo = require('nexmo')
+const crypto = require ("crypto");
+
+//init nexmo
+const nexmo = new Nexmo({
+    apiKey: '8222b19a',
+    apiSecret: 'dTldoivz0xSaoL0U'
+}, {debug: true});
 
 const router = express.Router();
 
@@ -18,6 +26,38 @@ router.post('/', async (req, res) => {
     }catch (error) {
         res.status(404).send("Mobile payment not added");
     }
+})
+
+//Send OTP ========================================
+router.post('/sendOTP', (req, res) => {
+    const number = req.body.phone;
+    const random = Math.floor(Math.random() * (9999 - 0001) + 1);
+    nexmo.message.sendSms(
+        'Vonage APIs', number, "OTP : "+ random, {type: 'unicode'},
+        (err, responseData) => {
+            if(err){
+                console.log(err);
+            }else{
+                console.dir(responseData);
+            }
+        }
+    );
+})
+
+//Send Details ========================================
+router.post('/sendData', (req, res) => {
+    const number = req.body.phone;
+    const amount = req.body.amount;
+    nexmo.message.sendSms(
+        'Vonage APIs', number, "You have paid RS."+ amount +" Successfully.", {type: 'unicode'},
+        (err, responseData) => {
+            if(err){
+                console.log(err);
+            }else{
+                console.dir(responseData);
+            }
+        }
+    );
 })
 
 
